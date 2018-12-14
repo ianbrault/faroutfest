@@ -1,8 +1,8 @@
-# Westwoodstock 2018
+# Westwoodstock 2019
 
-Development repository for the website for Westwoodstock 2018
+Development repository for the website for Westwoodstock 2019
 
 ## To-do
 
-- [ ] setup basic page layout
-- [ ] figure out horizontal scrolling
+- [x] setup basic page layout
+- [x] figure out horizontal scrolling
