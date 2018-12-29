@@ -40,10 +40,10 @@ section {
     width: 40vw;
 }
 
-.van {
+#van {
     position: fixed;
     bottom: 10px;
     width: 12vw;
-    left: 44vw;
+    left: -12vw;
     height: 100px;
 }

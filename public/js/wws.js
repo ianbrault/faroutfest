@@ -5,11 +5,17 @@
 (function($) {
     let scroll = true;
     let scrollFactor = 0.4;
-    let linkScrollSpeed = 1000;
+    // let linkScrollSpeed = 1000;
 
     let $document = $(document);
     let $body = $("body");
     let $bodyHtml = $("body,html");
+
+    let $van = $("#van");
+    let vanLeftMin = -0.40 * $body.innerWidth();
+    let vanLeftMax = 0.44 * $body.innerWidth();
+    let vanLeft = vanLeftMin;
+    let breakpoint = Math.abs(vanLeftMin) + vanLeftMax;
 
     if (browser.mobile)
         scroll = false;
@@ -18,8 +24,7 @@
         (function() {
             let normalizeWheel = function(event) {
                 let pixelStep = 10;
-                let lineHeight = 40;
-                let pageHeight = 800;
+                let lineHeight = 40, pageHeight = 800;
                 let sX = 0, sY = 0;
                 let pX = 0, pY = 0;
 
@@ -75,9 +80,16 @@
 
                 let n = normalizeWheel(event.originalEvent);
                 let x = (n.pixelX !== 0 ? n.pixelX : n.pixelY);
-                let delta = Math.min(Math.abs(x), 150) * scrollFactor;
-                let direction = x > 0 ? 1 : -1;
-                $document.scrollLeft($document.scrollLeft() + (delta * direction));
+                let delta = Math.min(Math.abs(x), 150) * scrollFactor * (x > 0 ? 1 : -1);
+
+                let docLeft = $document.scrollLeft();
+                $document.scrollLeft(docLeft + delta);
+
+                let offset = vanLeft + delta;
+                if (offset < vanLeftMax && offset > vanLeftMin && docLeft < breakpoint) {
+                    vanLeft += delta;
+                    $van.css("left", vanLeft);
+                }
             });
         })();
     }
