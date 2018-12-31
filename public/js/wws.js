@@ -10,12 +10,18 @@
     let $document = $(document);
     let $body = $("body");
     let $bodyHtml = $("body,html");
-
+    let $nav = $("#nav");
     let $van = $("#van");
-    let vanLeftMin = -0.40 * $body.innerWidth();
-    let vanLeftMax = 0.44 * $body.innerWidth();
+
+    let $bodyIW = $body.innerWidth();
+    let $navH = $nav.innerHeight();
+
+    let vanLeftMin = -0.40 * $bodyIW;
+    let vanLeftMax = 0.44 * $bodyIW;
     let vanLeft = vanLeftMin;
-    let breakpoint = Math.abs(vanLeftMin) + vanLeftMax;
+
+    let navBreakpoint = $bodyIW;
+    let vanBreakpoint = Math.abs(vanLeftMin) + vanLeftMax;
 
     if (browser.mobile)
         scroll = false;
@@ -85,8 +91,13 @@
                 let docLeft = $document.scrollLeft();
                 $document.scrollLeft(docLeft + delta);
 
+                if (docLeft > navBreakpoint)
+                    $nav.css("bottom", 20);
+                else
+                    $nav.css("bottom", -20 - $navH);
+
                 let offset = vanLeft + delta;
-                if (offset < vanLeftMax && offset > vanLeftMin && docLeft < breakpoint) {
+                if (offset < vanLeftMax && offset > vanLeftMin && docLeft < vanBreakpoint) {
                     vanLeft += delta;
                     $van.css("left", vanLeft);
                 }

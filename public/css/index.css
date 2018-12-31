@@ -42,8 +42,25 @@ section {
 
 #van {
     position: fixed;
-    bottom: 10px;
-    width: 12vw;
     left: -12vw;
+    bottom: 120px;
+    width: 12vw;
     height: 100px;
 }
+
+#nav {
+    position: fixed;
+    left: 30vw;
+    bottom: -100px;
+    width: 40vw;
+    height: 80px;
+    background-color: white;
+    border-radius: 4px;
+    transition: bottom 0.2s ease-out;
+}
+
+/* TODO: REMOVE LATER */
+.spacer { background-color: #00000010; }
+#s2 { background-color: #00000020; }
+#s3 { background-color: #00000030; }
+#s4 { background-color: #00000040; }
