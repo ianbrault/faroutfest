@@ -1,16 +1,11 @@
 {
     "env": {
-        "amd": true,
         "browser": true,
-        "es6": true,
-        "jquery": true,
-        "node": true
+        "commonjs": true,
+        "es6": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
@@ -30,12 +25,6 @@
         "semi": [
             "error",
             "always"
-        ],
-        "eqeqeq": [
-            "error",
-            "always"
-        ],
-        "no-undef": 0,
-        "no-console": 0
+        ]
     }
 }
