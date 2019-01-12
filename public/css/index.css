@@ -57,8 +57,7 @@ section {
 
 #van {
     position: fixed;
-    left: -12vw;
-    width: 12vw;
+    left: -50vw;
     height: 100px;
 }
 
@@ -112,12 +111,18 @@ section {
     }
 }
 
-.doodle {
+.image {
     position: absolute;
-    right: 120px;
+    right: 60px;
     bottom: 140px;
     max-width: 50vw;
     max-height: 80vh;
+}
+
+@media screen and (min-width: 1000px) {
+    .image {
+        right: 120px;
+    }
 }
 
 /* TODO: REMOVE LATER */

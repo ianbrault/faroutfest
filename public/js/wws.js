@@ -15,7 +15,7 @@
     let $navH = $nav.innerHeight();
 
     let vanLeftMin = -0.40 * $body.innerWidth();
-    let vanLeftMax = 0.44 * $body.innerWidth();
+    let vanLeftMax = ($body.innerWidth() - $van.innerWidth()) / 2;
     let vanLeft = vanLeftMin;
 
     let navBreakpoint = $body.innerWidth() <= 1000 ? $body.innerHeight() : $body.innerWidth();
