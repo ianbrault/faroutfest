@@ -9,7 +9,7 @@
     let $document = $(document);
     let $body = $("body");
     let $bodyHtml = $("body,html");
-    let $nav = $("#nav");
+    let $nav = $("#nav-wrapper");
     let $van = $("#van");
 
     let $navH = $nav.innerHeight();
