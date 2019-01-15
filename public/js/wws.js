@@ -4,8 +4,9 @@
 
 (function($) {
     let scrollFactor = 0.4;
-    // let linkScrollSpeed = 1000;
+    let linkScrollSpeed = 1000;
 
+    let $window = $(window);
     let $document = $(document);
     let $body = $("body");
     let $bodyHtml = $("body,html");
@@ -94,7 +95,7 @@
             $van.css("left", vanLeft);
         };
 
-        $body.on("wheel", function(event) {
+        let scrollHandler = function(event) {
             event.preventDefault();
             event.stopPropagation();
             // stop link scroll
@@ -126,8 +127,38 @@
             let offset = vanLeft + delta;
             if (offset < vanLeftMax && offset > vanLeftMin && scroll < vanBreakpoint)
                 scrollVan(delta);
+        };
+
+        $body.on("wheel", scrollHandler);
+        // $body.on("touchmove", scrollHandlerMobile);
+        
+        $body.on("mousedown mouseup", "a[href^=\"#\"]", function (event) {
+            event.stopPropagation();
+        }).on("click", "a[href^=\"#\"]", function (event) {
+            let $this = $(this);
+            let href = $this.attr("href");
+
+            let $target;
+            if (href == "#" || ($target = $(href)).length == 0)
+                return;
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            // calculate target position
+            let x, y;
+            if ($body.innerWidth() <= 1000) {
+                x = $target.offset().top - (Math.max(0, $window.height() - $target.outerHeight()) / 2);
+                y = { scrollTop: x };
+            } else {
+                x = $target.offset().left - (Math.max(0, $window.width() - $target.outerWidth()) / 2);
+                y = { scrollLeft: x };
+            }
+
+            $bodyHtml.stop().animate(y, linkScrollSpeed, "swing");
         });
 
+        /*
         $(window).on("resize", function() {
             vanLeftMin = -0.40 * $("body").innerWidth();
             vanLeftMax = 0.44 * $("body").innerWidth();
@@ -135,6 +166,7 @@
             navBreakpoint = $("body").innerWidth() <= 1000 ? $("body").innerHeight() : $("body").innerWidth();
             vanBreakpoint = Math.abs(vanLeftMin) + vanLeftMax;
         });
+        */
     })();
 })(jQuery);
 

@@ -10,8 +10,9 @@ Development repository for the website for Westwoodstock 2019
 - [x] van drives in from the left
 - [x] navbar pops up when content is scrolled into
 - [x] scroll progress bar
-- [ ] link scrolling from clicking navbar
+- [x] link scrolling from clicking navbar
 - [ ] slide-in animations for images on mobile scroll
 - [ ] transforms on screen resize (recalculate constants)
 - [ ] better sizing/positioning of images
 - [ ] slideshow feature
+- [ ] figure out iOS scrolling
