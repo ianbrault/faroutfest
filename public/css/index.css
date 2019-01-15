@@ -72,6 +72,7 @@ section {
 }
 
 #nav {
+    position: relative;
     padding: 18px 10px;
     display: flex;
     flex-direction: row;
@@ -79,6 +80,15 @@ section {
     justify-content: space-between;
     background-color: white;
     border-radius: 4px;
+}
+
+#progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background-color: black;
 }
 
 .navitem {
@@ -116,7 +126,7 @@ section {
     right: 60px;
     bottom: 140px;
     max-width: 50vw;
-    max-height: 80vh;
+    max-height: 72vh;
 }
 
 @media screen and (min-width: 1000px) {

@@ -12,17 +12,20 @@
     let $nav = $("#nav-wrapper");
     let $van = $("#van");
 
-    let $navH = $nav.innerHeight();
+    let isMobile = $body.innerWidth() <= 1000;
+
+    let screenUnit = isMobile ? $body.innerHeight() : $body.innerWidth();
+    let totalProgress = 3.4 * screenUnit; 
 
     let vanLeftMin = -0.40 * $body.innerWidth();
     let vanLeftMax = ($body.innerWidth() - $van.innerWidth()) / 2;
     let vanLeft = vanLeftMin;
 
-    let navBreakpoint = $body.innerWidth() <= 1000 ? $body.innerHeight() : $body.innerWidth();
+    let navBreakpoint = screenUnit; 
     let vanBreakpoint = Math.abs(vanLeftMin) + vanLeftMax;
 
     (function() {
-        $van.css("bottom", 40 + $navH);
+        $van.css("bottom", 40 + $("#nav-wrapper").innerHeight());
 
         let normalizeWheel = function(event) {
             let pixelStep = 10;
@@ -107,11 +110,17 @@
             else
                 scroll = scrollDesktop(delta);
 
+            let progress = scroll - screenUnit;
+            if (progress > 0) {
+                let barW = Math.round((progress / totalProgress) * $("#nav").innerWidth());
+                $("#progress").css("width", barW);
+            }
+
             // show nav if past breakpoint
             if (scroll > navBreakpoint)
                 $nav.css("bottom", 20);
             else
-                $nav.css("bottom", -20 - $navH);
+                $nav.css("bottom", -20 - $("#nav-wrapper").innerHeight());
 
             // van drive-in animation
             let offset = vanLeft + delta;
