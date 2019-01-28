@@ -131,7 +131,7 @@
 
         $body.on("wheel", scrollHandler);
         // $body.on("touchmove", scrollHandlerMobile);
-        
+
         $body.on("mousedown mouseup", "a[href^=\"#\"]", function (event) {
             event.stopPropagation();
         }).on("click", "a[href^=\"#\"]", function (event) {
