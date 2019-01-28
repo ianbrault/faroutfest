@@ -1,5 +1,5 @@
 /*
- * wws.js
+ * js/faroutfest.js
  */
 
 (function($) {
@@ -16,13 +16,13 @@
     let isMobile = $body.innerWidth() <= 1000;
 
     let screenUnit = isMobile ? $body.innerHeight() : $body.innerWidth();
-    let totalProgress = 3.4 * screenUnit; 
+    let totalProgress = 3.4 * screenUnit;
 
     let vanLeftMin = -0.40 * $body.innerWidth();
     let vanLeftMax = ($body.innerWidth() - $van.innerWidth()) / 2;
     let vanLeft = vanLeftMin;
 
-    let navBreakpoint = screenUnit; 
+    let navBreakpoint = screenUnit;
     let vanBreakpoint = Math.abs(vanLeftMin) + vanLeftMax;
 
     (function() {
@@ -169,4 +169,3 @@
         */
     })();
 })(jQuery);
-

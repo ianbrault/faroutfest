@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Filson Pro";
     font-weight: 400;
-    src: url("/fonts/filson_pro_reegular.otf") format("opentype");
+    src: url("/fonts/filson_pro_regular.otf") format("opentype");
 }
 
 @font-face {
@@ -55,9 +55,35 @@ section {
     justify-content: center;
 }
 
-.title {
-    font-size: 40px;
-    color: white;
+#slideshow {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+#slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#title {
+    position: absolute;
+    z-index: 10;
+    font-family: "Good Dog";
+    font-size: 100px;
+    -moz-text-fill-color: white;
+    -webkit-text-fill-color: white;
+    -moz-text-stroke-color: black;
+    -webkit-text-stroke-color: black;
+    -moz-text-stroke-width: 3px;
+    -webkit-text-stroke-width: 3px;
+    paint-order: stroke fill;
 }
 
 .spacer {
@@ -111,9 +137,9 @@ section {
 
 .navitem {
     text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
+    font-family: "Filson Pro";
     font-size: 16px;
+    color: black;
     padding: 0 20px;
 }
 
