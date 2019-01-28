@@ -1,3 +1,20 @@
+@font-face {
+    font-family: "Filson Pro";
+    font-weight: 400;
+    src: url("/fonts/filson_pro_reegular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Filson Pro";
+    font-weight: 700;
+    src: url("/fonts/filson_pro_bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Good Dog";
+    src: url("/fonts/good_dog.ttf") format("truetype");
+}
+
 body {
     width: 100vw;
     height: 100vh;
