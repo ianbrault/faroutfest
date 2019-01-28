@@ -11,8 +11,9 @@ Development repository for the website for Westwoodstock 2019
 - [x] navbar pops up when content is scrolled into
 - [x] scroll progress bar
 - [x] link scrolling from clicking navbar
+- [x] find font assets
 - [ ] slide-in animations for images on mobile scroll
 - [ ] transforms on screen resize (recalculate constants)
 - [ ] better sizing/positioning of images
-- [ ] slideshow feature
+- [x] slideshow feature
 - [ ] figure out iOS scrolling
