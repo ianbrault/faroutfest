@@ -8,5 +8,5 @@ $(function() {
         $("#slideshow :first-child").fadeOut(600)
             .next("img").fadeIn(600)
             .end().appendTo("#slideshow");
-    }, 3000);
+    }, 4000);
 });

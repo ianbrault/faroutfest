@@ -95,6 +95,7 @@
             $van.css("left", vanLeft);
         };
 
+        // supports desktop scrolling via wheel events
         let scrollHandler = function(event) {
             event.preventDefault();
             event.stopPropagation();
@@ -130,8 +131,8 @@
         };
 
         $body.on("wheel", scrollHandler);
-        // $body.on("touchmove", scrollHandlerMobile);
 
+        // link scrolling
         $body.on("mousedown mouseup", "a[href^=\"#\"]", function (event) {
             event.stopPropagation();
         }).on("click", "a[href^=\"#\"]", function (event) {
@@ -159,6 +160,7 @@
         });
 
         /*
+        // re-calculate window constants on resize
         $(window).on("resize", function() {
             vanLeftMin = -0.40 * $("body").innerWidth();
             vanLeftMax = 0.44 * $("body").innerWidth();
