@@ -101,12 +101,11 @@ section {
 
 #nav-wrapper {
     position: fixed;
-    bottom: -100px;
+    bottom: 20px;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: bottom 0.2s ease-out;
 }
 
 #nav {

@@ -10,19 +10,17 @@
     let $document = $(document);
     let $body = $("body");
     let $bodyHtml = $("body,html");
-    let $nav = $("#nav-wrapper");
     let $van = $("#van");
 
     let isMobile = $body.innerWidth() <= 1000;
 
     let screenUnit = isMobile ? $body.innerHeight() : $body.innerWidth();
-    let totalProgress = 3.4 * screenUnit;
+    let totalProgress = 4.4 * screenUnit;
 
+    let vanWidth = $van.innerWidth();
     let vanLeftMin = -0.40 * $body.innerWidth();
-    let vanLeftMax = ($body.innerWidth() - $van.innerWidth()) / 2;
+    let vanLeftMax = ($body.innerWidth() - vanWidth) / 2;
     let vanLeft = vanLeftMin;
-
-    let navBreakpoint = screenUnit;
     let vanBreakpoint = Math.abs(vanLeftMin) + vanLeftMax;
 
     (function() {
@@ -112,17 +110,11 @@
             else
                 scroll = scrollDesktop(delta);
 
-            let progress = scroll - screenUnit;
+            let progress = scroll;
             if (progress > 0) {
                 let barW = Math.round((progress / totalProgress) * $("#nav").innerWidth());
                 $("#progress").css("width", barW);
             }
-
-            // show nav if past breakpoint
-            if (scroll > navBreakpoint)
-                $nav.css("bottom", 20);
-            else
-                $nav.css("bottom", -20 - $("#nav-wrapper").innerHeight());
 
             // van drive-in animation
             let offset = vanLeft + delta;
