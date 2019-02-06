@@ -23,12 +23,6 @@ body {
     overflow: scroll;
 }
 
-@media screen and (min-width: 768px) {
-    body {
-        overflow: hidden;
-    }
-}
-
 #content {
     height: 540vh;
     width: 100vw;
@@ -37,14 +31,6 @@ body {
     align-items: center;
     justify-content: flex-start;
     background-color: rgba(70, 59, 136, 0.6);
-}
-
-@media screen and (min-width: 1000px) {
-    #content {
-        height: 100vh;
-        width: 540vw;
-        flex-direction: row;
-    }
 }
 
 section {
@@ -92,13 +78,6 @@ section {
     width: 100vw;
 }
 
-@media screen and (min-width: 1000px) {
-    .spacer {
-        height: 100vh;
-        width: 40vw;
-    }
-}
-
 #van {
     position: fixed;
     left: -50vw;
@@ -116,13 +95,21 @@ section {
 
 #nav {
     position: relative;
-    padding: 18px 10px;
+    padding: 24px 16px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     background-color: white;
     border-radius: 4px;
+}
+
+.navitem {
+    text-decoration: none;
+    font-family: "Filson Pro";
+    font-size: 20px;
+    color: black;
+    padding: 0 32px;
 }
 
 #progress {
@@ -135,36 +122,6 @@ section {
     border-radius: 4px;
 }
 
-.navitem {
-    text-decoration: none;
-    font-family: "Filson Pro";
-    font-size: 16px;
-    color: black;
-    padding: 0 20px;
-}
-
-@media screen and (min-width: 1000px) {
-    #nav {
-        padding: 22px 14px;
-    }
-
-    .navitem {
-        font-size: 18px;
-        padding: 0 28px;
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    #nav {
-        padding: 24px 16px;
-    }
-
-    .navitem {
-        font-size: 20px;
-        padding: 0 32px;
-    }
-}
-
 .image {
     position: absolute;
     right: 60px;
@@ -173,9 +130,49 @@ section {
     max-height: 72vh;
 }
 
-@media screen and (min-width: 1000px) {
+/* "MOBILE" DESKTOP STYLING */
+@media only screen and (min-width: 1000px) {
+    body {
+        overflow: hidden;
+    }
+
+    #content {
+        height: 100vh;
+        width: 540vw;
+        flex-direction: row;
+    }
+
+    .spacer {
+        height: 100vh;
+        width: 40vw;
+    }
+
     .image {
         right: 120px;
+    }
+}
+
+/* MOBILE STYLING */
+@media only screen and (max-device-width: 812px) {
+    body {
+        overflow: scroll;
+    }
+
+    #van {
+        height: 160px;
+    }
+
+    #nav-wrapper {
+        bottom: 40px;
+    }
+
+    #nav {
+        padding: 30px 18px;
+        border-radius: 8px;
+    }
+
+    .navitem {
+        font-size: 30px;
     }
 }
 

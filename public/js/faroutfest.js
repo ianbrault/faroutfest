@@ -24,17 +24,20 @@
     let screenUnit = mobile ? $body.innerHeight() : $body.innerWidth();
     let totalProgress = 4.4 * screenUnit;
 
-    let vanWidth = $van.innerWidth();
-    let vanLeftMin = -0.40 * $body.innerWidth();
-    let vanLeftMax = ($body.innerWidth() - vanWidth) / 2;
-    let vanLeft = vanLeftMin;
-    let vanBreakpoint = Math.abs(vanLeftMin) + vanLeftMax;
-
-    let navWidth = $("#nav").innerWidth();
-
 
     (function() {
-        $van.css("bottom", 40 + $("#nav-wrapper").innerHeight());
+        let vanWidth = $van.innerWidth();
+        let vanLeftMin = -0.4 * $body.innerWidth();
+        let vanLeftMax = ($body.innerWidth() - vanWidth) / 2;
+        let vanPathLength = Math.abs(vanLeftMin) + vanLeftMax;
+        let vanScrollEnd = screenUnit;
+
+        let navWidth = $("#nav").innerWidth();
+
+        if (mobile)
+            $van.css("bottom", 60 + $("#nav-wrapper").innerHeight());
+        else
+            $van.css("bottom", 40 + $("#nav-wrapper").innerHeight());
 
         let normalizeWheel = function(event) {
             let pixelStep = 10;
@@ -98,9 +101,13 @@
             return docLeft;
         };
 
-        let scrollVan = function(delta) {
-            vanLeft += delta;
-            $van.css("left", vanLeft);
+        let scrollVan = function(scroll) {
+            if (scroll > vanScrollEnd || scroll < 0)
+                return;
+            let position = ((scroll / vanScrollEnd) * vanPathLength) + vanLeftMin;
+            if (mobile)
+                position -= ($van.innerWidth() / 2);
+            $van.css("left", position);
         };
 
         let updateProgress = function(progress) {
@@ -122,40 +129,33 @@
             let delta = Math.min(Math.abs(x), 150) * scrollFactor * (x > 0 ? 1 : -1);
 
             let scroll;
-            if ($body.innerWidth() <= 768)
+            if ($body.innerWidth() <= 1000)
                 scroll = scrollMobile(delta);
             else
                 scroll = scrollDesktop(delta);
 
             updateProgress(scroll);
-
-            // van drive-in animation
-            let offset = vanLeft + delta;
-            if (offset < vanLeftMax && offset > vanLeftMin && scroll < vanBreakpoint)
-                scrollVan(delta);
+            scrollVan(scroll);
         };
 
         $body.on("wheel", scrollHandler);
 
         function mobileFrame() {
-            console.log($document.scrollTop());
-            updateProgress($document.scrollTop());
+            let scroll = $document.scrollTop();
+            updateProgress(scroll);
+            scrollVan(scroll);
 
+            requestAnimationFrame(mobileFrame);
+        } if (mobile) {
             requestAnimationFrame(mobileFrame);
         }
 
-        if (mobile) {
-            requestAnimationFrame(mobileFrame);
-        }
-
-        let scrollHandlerAttached = $body.innerWidth() > 800;
+        let scrollHandlerAttached = $body.innerWidth() > 1000;
         $(window).on("resize", function() {
-            if ($body.innerWidth() <= 800 && scrollHandlerAttached) {
-                console.log("detaching handler");
+            if ($body.innerWidth() <= 1000 && scrollHandlerAttached) {
                 $body.off("wheel", scrollHandler);
                 scrollHandlerAttached = false;
-            } else if ($body.innerWidth() > 800 && !scrollHandlerAttached) {
-                console.log("attaching handler");
+            } else if ($body.innerWidth() > 1000 && !scrollHandlerAttached) {
                 $body.on("wheel", scrollHandler);
                 scrollHandlerAttached = true;
             }
