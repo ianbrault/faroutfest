@@ -1,6 +1,6 @@
-# Westwoodstock 2019
+# Far Out Fest 2019
 
-Development repository for the website for Westwoodstock 2019
+Development repository for the website for Far Out Fest 2019
 
 ## To-do
 
@@ -12,8 +12,8 @@ Development repository for the website for Westwoodstock 2019
 - [x] scroll progress bar
 - [x] link scrolling from clicking navbar
 - [x] find font assets
-- [ ] slide-in animations for images on mobile scroll
+- [x] slideshow feature
+- [x] figure out iOS scrolling
 - [ ] transforms on screen resize (recalculate constants)
 - [ ] better sizing/positioning of images
-- [x] slideshow feature
-- [ ] figure out iOS scrolling
+- [ ] slide-in animations for images on mobile scroll (?)
