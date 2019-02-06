@@ -1,25 +1,15 @@
 @font-face {
-    font-family: "Filson Pro";
+    font-family: "Filson";
     font-weight: 400;
-    src: url("/fonts/filson_pro_regular.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "Filson Pro";
-    font-weight: 700;
-    src: url("/fonts/filson_pro_bold.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "Good Dog";
-    src: url("/fonts/good_dog.ttf") format("truetype");
+    src: url("/fonts/filson_soft_medium.otf") format("opentype");
 }
 
 body {
     width: 100vw;
     height: 100vh;
     margin: 0;
-    font-family: sans-serif;
+    font-family: "Filson", sans-serif;
+    color: #2c2c2c;
     overflow: scroll;
 }
 
@@ -106,9 +96,8 @@ section {
 
 .navitem {
     text-decoration: none;
-    font-family: "Filson Pro";
     font-size: 20px;
-    color: black;
+    color: #2c2c2c;
     padding: 0 32px;
 }
 
