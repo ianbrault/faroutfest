@@ -102,9 +102,14 @@
         };
 
         let scrollVan = function(scroll) {
-            if (scroll > vanScrollEnd || scroll < 0)
-                return;
-            let position = ((scroll / vanScrollEnd) * vanPathLength) + vanLeftMin;
+            let position;
+            if (scroll <= 0)
+                position = vanLeftMin;
+            else if (scroll > vanScrollEnd)
+                position = vanLeftMax;
+            else
+                position = ((scroll / vanScrollEnd) * vanPathLength) + vanLeftMin;
+
             if (mobile)
                 position -= ($van.innerWidth() / 2);
             $van.css("left", position);

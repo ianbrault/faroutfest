@@ -125,9 +125,8 @@ section {
 .image {
     position: absolute;
     right: 60px;
-    bottom: 140px;
-    max-width: 50vw;
-    max-height: 72vh;
+    top: 100px;
+    max-height: 64vh;
 }
 
 /* "MOBILE" DESKTOP STYLING */
