@@ -19,13 +19,12 @@
         return check;
     }
 
-    let mobile = isMobile();
-
-    let screenUnit = mobile ? $body.innerHeight() : $body.innerWidth();
-    let totalProgress = 4.4 * screenUnit;
-
-
     (function() {
+        let mobile = isMobile();
+
+        let screenUnit = mobile ? $body.innerHeight() : $body.innerWidth();
+        let totalProgress = 4.4 * screenUnit;
+
         let vanWidth = $van.innerWidth();
         let vanLeftMin = -0.4 * $body.innerWidth();
         let vanLeftMax = ($body.innerWidth() - vanWidth) / 2;
@@ -164,12 +163,6 @@
                 $body.on("wheel", scrollHandler);
                 scrollHandlerAttached = true;
             }
-
-            /*
-            vanLeftMin = -0.40 * $("body").innerWidth();
-            vanLeftMax = 0.44 * $("body").innerWidth();
-            vanBreakpoint = Math.abs(vanLeftMin) + vanLeftMax;
-            */
         });
 
         // link scrolling
