@@ -116,7 +116,7 @@
 
         let updateProgress = function(progress) {
             if (progress > 0) {
-                let barW = Math.round((progress / totalProgress) * navWidth);
+                let barW = navWidth - Math.round((progress / totalProgress) * navWidth);
                 $progBar.css("width", barW);
             }
         };
