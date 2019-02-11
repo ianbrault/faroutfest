@@ -100,7 +100,7 @@ section {
 #van {
     position: fixed;
     left: -50vw;
-    height: 100px;
+    height: 160px;
 }
 
 #nav-wrapper {
@@ -154,7 +154,7 @@ section {
 .image {
     position: absolute;
     right: 60px;
-    top: 100px;
+    top: 60px;
     max-height: 64vh;
 }
 
