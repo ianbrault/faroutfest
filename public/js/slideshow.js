@@ -6,10 +6,7 @@ const nImages = 8;
 
 const loadImage = async (n) => new Promise((resolve, reject) => {
     let img = new Image();
-    img.onload = () => {
-        console.log("loaded image ", n);
-        resolve(img);
-    };
+    img.onload = () => resolve(img);
     img.onerror = reject;
     img.src = `/img/slideshow/${n}.jpg`;
 });
