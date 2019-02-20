@@ -27,7 +27,7 @@
 
         let vanWidth = $van.innerWidth();
         let vanLeftMin = -0.5 * $body.innerWidth();
-        let vanLeftMax = ($body.innerWidth() - vanWidth) / 2;
+        let vanLeftMax = (($body.innerWidth() - vanWidth) / 2);
         let vanPathLength = Math.abs(vanLeftMin) + vanLeftMax;
         let vanScrollEnd = screenUnit;
 

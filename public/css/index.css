@@ -1,14 +1,18 @@
 @font-face {
-    font-family: "Filson";
-    font-weight: 400;
+    font-family: "Filson Soft Medium";
     src: url("/fonts/filson_soft_medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Filson Soft Book";
+    src: url("/fonts/filson_soft_book.woff") format("woff");
 }
 
 body {
     width: 100vw;
     height: 100vh;
     margin: 0;
-    font-family: "Filson", sans-serif;
+    font-family: "Filson Soft Medium", sans-serif;
     color: #2c2c2c;
     overflow: scroll;
 }
@@ -85,11 +89,11 @@ section {
     width: 180px;
     padding: 12px 0;
     margin: 0 28px;
-    font-size: 26px;
-    color: #EC3B3399;
-    border: 4px solid #EC3B3395;
-    border-radius: 10px;
-    background-color: #EADAC795;
+    font-size: 30px;
+    color: #EADAC7;
+    border: 2px solid #EADAC7;
+    border-radius: 12px;
+    background-color: #C45188;
 }
 
 .spacer {
@@ -100,7 +104,8 @@ section {
 #van {
     position: fixed;
     left: -50vw;
-    height: 160px;
+    height: 240px;
+    transform-origin: center;
 }
 
 #nav-wrapper {
@@ -151,11 +156,33 @@ section {
     background-color: white;
 }
 
-.image {
+.content-wrapper {
     position: absolute;
-    right: 60px;
-    top: 60px;
-    max-height: 64vh;
+    right: 40px;
+    top: 40px;
+    height: 64vh;
+}
+
+#wrapper1 {
+    max-width: 80vw;
+}
+
+.copy {
+    height: 100%;
+    color: white;
+    font-family: "Filson Soft Book";
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.image {
+    height: 100%;
+    float: right;
+}
+
+#ferris {
+    shape-outside: ellipse();
+    shape-margin: 32px;
 }
 
 /* "MOBILE" DESKTOP STYLING */
