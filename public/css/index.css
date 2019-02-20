@@ -169,6 +169,7 @@ section {
 
 .copy {
     height: 100%;
+    margin: 0;
     color: white;
     font-family: "Filson Soft Book";
     font-size: 18px;
@@ -181,7 +182,7 @@ section {
 }
 
 #ferris {
-    shape-outside: ellipse();
+    shape-outside: circle(at left 50% top 46%);
     shape-margin: 32px;
 }
 
