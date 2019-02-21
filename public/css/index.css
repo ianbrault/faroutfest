@@ -17,6 +17,7 @@ body {
     width: 100vw;
     height: 100vh;
     margin: 0;
+    padding: 0;
     font-family: "Filson Soft Medium", sans-serif;
     color: #2c2c2c;
     overflow: scroll;
@@ -358,13 +359,36 @@ section {
 }
 
 /* MOBILE STYLING */
-@media only screen and (max-device-width: 812px) {
-    body {
-        overflow: scroll;
+@media only screen and (max-device-width: 813px) {
+    html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    .home {
+        justify-content: center;
+        padding-top: 0;
+        padding-bottom: 20vh;
+    }
+
+    #logo {
+        width: 82vw;
+    }
+
+    .button {
+        width: 240px;
+        padding: 12px 0;
+        margin: 12px 28px;
+        font-size: 40px;
+        border: 6px solid #EADAC7;
+        border-radius: 12px;
     }
 
     #van {
-        height: 160px;
+        width: 40vw;
     }
 
     #nav-wrapper {
@@ -377,6 +401,6 @@ section {
     }
 
     .navitem {
-        font-size: 30px;
+        font-size: 32px;
     }
 }
