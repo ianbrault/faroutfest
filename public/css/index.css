@@ -393,7 +393,7 @@ section {
     }
 
     .content-wrapper {
-        right: 32px;
+        right: 4vw;
         top: 0;
         width: 90vw;
     }
@@ -416,6 +416,42 @@ section {
 
     #text-arc-top {
         display: none;
+    }
+
+    #wrapper2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #royce {
+        width: 64%;
+        margin-top: -32px;
+    }
+
+    #lineup-title {
+        font-size: 132px;
+        margin: 0;
+    }
+
+    #lineup-switch {
+        font-size: 28px;
+        margin: 0 0 20px 0;
+    }
+
+    #lineup2018 {
+        font-size: 38px;
+        line-height: 48px;
+    }
+
+    #lineup2017-maj {
+        font-size: 33px;
+        line-height: 40px;
+        margin-bottom: 16px;
+    }
+
+    #lineup2017-min {
+        font-size: 30px;
+        line-height: 38px;
     }
 
     #nav-wrapper {
