@@ -22,6 +22,10 @@ body {
     overflow: scroll;
 }
 
+a {
+    text-decoration: none;
+}
+
 #content {
     height: 570vh;
     width: 100vw;
@@ -174,13 +178,17 @@ section {
 }
 
 #wrapper1 {
-    max-width: 80vw;
+    max-width: 84vw;
+    right: 64px;
+}
+
+#wrapper2, #wrapper3 {
+    display: flex;
+    flex-direction: row;
 }
 
 #wrapper2 {
     max-width: 92vw;
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -203,8 +211,21 @@ section {
     shape-margin: 32px;
 }
 
+#text-arc-top {
+    display: inline-block;
+    float: left;
+    width: 72px;
+    height: 80px;
+    clip-path: polygon(0 0, 100% 0, 30% 30%, 0% 100%);
+    shape-outside: polygon(0 0, 100% 0, 30% 30%, 0% 100%);
+}
+
 #royce {
     padding-left: 32px;
+}
+
+#fox {
+    padding-left: 40px;
 }
 
 #lineup-title, #lineup-switch {
@@ -219,7 +240,7 @@ section {
     font-family: "Good Dog";
     font-size: 80px;
     text-transform: uppercase;
-    margin: 0;
+    margin: 8px 0 0 0;
 }
 
 #lineup-switch {
@@ -253,6 +274,13 @@ section {
 
 .dot {
     color: #C45188;
+}
+
+#sponsors {
+    font-family: "Good Dog";
+    font-size: 80px;
+    color: #FAA235;
+    margin: 0;
 }
 
 /* "MOBILE" DESKTOP STYLING */
