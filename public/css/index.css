@@ -8,6 +8,11 @@
     src: url("/fonts/filson_soft_book.woff") format("woff");
 }
 
+@font-face {
+    font-family: "Good Dog";
+    src: url("/fonts/good_dog.ttf") format("truetype");
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -18,7 +23,7 @@ body {
 }
 
 #content {
-    height: 540vh;
+    height: 570vh;
     width: 100vw;
     display: flex;
     flex-flow: column;
@@ -39,6 +44,11 @@ section {
     flex-flow: column;
     align-items: center;
     justify-content: center;
+}
+
+#s3 {
+    width: 100vw;
+    height: 120vh;
 }
 
 #slideshow {
@@ -86,25 +96,25 @@ section {
 .button {
     cursor: pointer;
     text-align: center;
-    width: 180px;
-    padding: 12px 0;
-    margin: 0 28px;
+    width: 200px;
+    padding: 8px 0;
+    margin: 0 32px;
     font-size: 30px;
     color: #EADAC7;
-    border: 2px solid #EADAC7;
+    border: 4px solid #EADAC7;
     border-radius: 12px;
-    background-color: #C45188;
+    background-color: hsl(3, 74%, 60%);
 }
 
 .spacer {
-    height: 40vh;
+    height: 50vh;
     width: 100vw;
 }
 
 #van {
     position: fixed;
     left: -50vw;
-    height: 240px;
+    width: 20vw;
     transform-origin: center;
 }
 
@@ -167,6 +177,13 @@ section {
     max-width: 80vw;
 }
 
+#wrapper2 {
+    max-width: 92vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .copy {
     height: 100%;
     margin: 0;
@@ -186,6 +203,58 @@ section {
     shape-margin: 32px;
 }
 
+#royce {
+    padding-left: 32px;
+}
+
+#lineup-title, #lineup-switch {
+    cursor: pointer;
+    user-select: none;
+    color: #FAA235;
+    width: 100%;
+    text-align: center;
+}
+
+#lineup-title {
+    font-family: "Good Dog";
+    font-size: 80px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+#lineup-switch {
+    font-family: "Filson Soft Book";
+    font-size: 18px;
+    margin: 0 0 16px 0;
+}
+
+#lineup2018, #lineup2017-maj, #lineup2017-min {
+    color: #F3CB39;
+    font-family: "Filson Soft Book";
+    text-align: center;
+    margin: 0;
+}
+
+#lineup2018 {
+    font-size: 30px;
+    line-height: 40px;
+}
+
+#lineup2017-maj {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 12px;
+}
+
+#lineup2017-min {
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.dot {
+    color: #C45188;
+}
+
 /* "MOBILE" DESKTOP STYLING */
 @media only screen and (min-width: 1000px) {
     body {
@@ -194,13 +263,18 @@ section {
 
     #content {
         height: 100vh;
-        width: 540vw;
+        width: 570vw;
         flex-direction: row;
+    }
+
+    #s3 {
+        width: 120vw;
+        height: 100vh;
     }
 
     .spacer {
         height: 100vh;
-        width: 40vw;
+        width: 50vw;
     }
 
     .image {

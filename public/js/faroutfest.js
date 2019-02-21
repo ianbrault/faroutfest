@@ -21,22 +21,27 @@
 
     (function() {
         let mobile = isMobile();
+        if (mobile)
+            $van.css("bottom", 50 + $("#nav-wrapper").innerHeight());
+        else
+            $van.css("bottom", 30 + $("#nav-wrapper").innerHeight());
 
         let screenUnit = mobile ? $body.innerHeight() : $body.innerWidth();
-        let totalProgress = 4.4 * screenUnit;
+        let totalProgress = (0.5 + 1.2 + 3) * screenUnit;
 
         let vanWidth = $van.innerWidth();
         let vanLeftMin = -0.5 * $body.innerWidth();
-        let vanLeftMax = (($body.innerWidth() - vanWidth) / 2);
+        let vanLeftMax = ($body.innerWidth() / 2) - (vanWidth / 2);
         let vanPathLength = Math.abs(vanLeftMin) + vanLeftMax;
         let vanScrollEnd = screenUnit;
 
-        let navWidth = $("#nav").innerWidth();
+        console.log($body.innerWidth());
+        console.log($body.innerWidth() / 2);
+        console.log(vanWidth);
+        console.log(vanWidth / 2);
+        console.log(vanLeftMax);
 
-        if (mobile)
-            $van.css("bottom", 60 + $("#nav-wrapper").innerHeight());
-        else
-            $van.css("bottom", 40 + $("#nav-wrapper").innerHeight());
+        let navWidth = $("#nav").innerWidth();
 
         let normalizeWheel = function(event) {
             let pixelStep = 10;

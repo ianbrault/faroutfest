@@ -11,7 +11,6 @@ html
                 div.home
                     img#logo(src="/img/logo.svg")
                     div.row
-                    //-
                         div.button apply
                         div.button rsvp
             section.spacer
@@ -37,11 +36,15 @@ html
                         | age of culture and celebration. Let’s kick it off together, May 4th 2pm
                         | to midnight. 
             section#s3
-                div.content-wrapper
-                    img.image(src="/img/royce-color.svg")
+                div#wrapper2.content-wrapper
+                    div.lineup-wrapper
+                        p#lineup-title
+                        p#lineup-switch click to see the previous lineup
+                        div#lineup-text-wrapper
+                    img#royce.image(src="/img/royce-color.svg")
             section#s4
                 div.content-wrapper
-                    img.image(src="/img/fox-theater-color.svg")
+                     img.image(src="/img/fox-theater-color.svg")
             section#s5
                 div.content-wrapper
                     img.image(src="/img/stage-color.svg")
@@ -49,7 +52,7 @@ html
         div#nav-wrapper
             nav#nav
                 a.navitem(href="#s2") about
-                a.navitem(href="#s3") gallery
+                a.navitem(href="#s3") lineup
                 a.navitem(href="#s4") sponsors
                 a.navitem(href="#s5") apply/rsvp
                 div#progressbg
@@ -58,3 +61,4 @@ html
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
         script(src="/js/faroutfest.js")
         script(src="/js/slideshow.js")
+        script(src="/js/lineup.js")
