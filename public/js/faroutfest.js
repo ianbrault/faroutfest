@@ -165,10 +165,11 @@
             }
         });
 
-        // link scrolling
-        $body.on("mousedown mouseup", "a[href^=\"#\"]", function (event) {
-            event.stopPropagation();
-        }).on("click", "a[href^=\"#\"]", function (event) {
+        function linkScroll(event) {
+            if (mobile) {
+                return;
+            }
+
             let $this = $(this);
             let href = $this.attr("href");
 
@@ -186,6 +187,8 @@
                 y = { scrollTop: x };
             } else {
                 x = $target.offset().left - (Math.max(0, $window.width() - $target.outerWidth()) / 2);
+                if (href === "#s3")
+                    x += (0.2 * screenUnit);
                 y = { scrollLeft: x };
             }
 
@@ -193,6 +196,10 @@
             let scroll = y.scrollTop ? y.scrollTop : y.scrollLeft;
             updateProgress(scroll);
             scrollVan(scroll);
-        });
+        }
+
+        let navItems = document.getElementsByClassName("navitem");
+        for (let i = 0; i < navItems.length; i++)
+            navItems[i].onclick = linkScroll;
     })();
 })(jQuery);

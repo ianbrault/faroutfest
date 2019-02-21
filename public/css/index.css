@@ -141,7 +141,7 @@ section {
 
 #nav {
     position: relative;
-    padding: 24px 16px;
+    padding: 0 16px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -154,7 +154,7 @@ section {
     text-decoration: none;
     font-size: 20px;
     color: #2c2c2c;
-    padding: 0 32px;
+    padding: 24px 32px;
 }
 
 #progressbg {
@@ -510,12 +510,13 @@ section {
     }
 
     #nav {
-        padding: 30px 18px;
+        padding: 0 18px;
         border-radius: 8px;
     }
 
     .navitem {
         font-size: 32px;
+        padding: 30px 32px;
     }
 
     #plug {
