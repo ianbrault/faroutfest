@@ -401,12 +401,12 @@ section {
     }
 
     #wrapper1 {
-        height: 96%;
-        max-width: 90vw;
+        height: 100%;
+        max-width: 88vw;
     }
 
     #ferris {
-        width: 56vw;
+        width: 52vw;
         shape-outside: circle(at left 50% top 49%);
         shape-margin: 26px;
     }
@@ -460,18 +460,30 @@ section {
         padding: 0;
     }
 
+    #wrapper3 {
+        flex-direction: row-reverse;
+    }
+
     .sponsors-wrapper {
-        margin-right: -40px;
+        margin-left: -40px;
+        align-items: flex-start;
     }
 
     .sponsors-title {
-        font-size: 108px;
+        font-size: 120px;
         margin: 24px 0;
         margin-right: -20px;
     }
 
     .sponsor {
-        font-size: 28px;
+        font-size: 30px;
+        line-height: 36px;
+        text-align: left;
+    }
+
+    .ww-logo {
+        width: 100px;
+        height: 100px;
     }
 
     #wrapper4 {
@@ -501,5 +513,11 @@ section {
 
     .navitem {
         font-size: 32px;
+    }
+
+    #plug {
+        bottom: 4px;
+        right: 16px;
+        font-size: 16px;
     }
 }
