@@ -125,7 +125,7 @@ section {
 
 #van {
     position: fixed;
-    left: -50vw;
+    left: -60vw;
     width: 20vw;
     transform-origin: center;
 }
@@ -391,7 +391,7 @@ section {
     }
 
     #van {
-        width: 40vw;
+        width: 48vw;
     }
 
     .content-wrapper {
@@ -488,12 +488,15 @@ section {
 
     #wrapper4 {
         flex-direction: column-reverse;
+        margin-top: -20px;
     }
 
     .stage-wrapper {
+        position: relative;
         flex-direction: row;
         align-items: center;
-        margin-top: -32px;
+        top: -32px;
+        padding: 0;
     }
 
     #stage {
@@ -519,5 +522,9 @@ section {
         bottom: 4px;
         right: 16px;
         font-size: 16px;
+    }
+
+    #progress, #progressbg {
+        height: 8px;
     }
 }
