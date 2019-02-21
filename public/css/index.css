@@ -27,6 +27,14 @@ a {
     text-decoration: none;
 }
 
+#background {
+    position: fixed;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#6d62d1, #2c2c2c);
+}
+
 #content {
     height: 570vh;
     width: 100vw;
@@ -34,7 +42,6 @@ a {
     flex-flow: column;
     align-items: center;
     justify-content: flex-start;
-    background: linear-gradient(#6d62d1, #2c2c2c);
 }
 
 section {
