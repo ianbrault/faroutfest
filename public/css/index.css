@@ -182,7 +182,7 @@ section {
     right: 64px;
 }
 
-#wrapper2, #wrapper3 {
+#wrapper2, #wrapper3, #wrapper4 {
     display: flex;
     flex-direction: row;
 }
@@ -230,7 +230,7 @@ section {
     padding-left: 32px;
 }
 
-#fox {
+#fox, #stage {
     padding-left: 40px;
 }
 
@@ -307,6 +307,27 @@ section {
     height: 80px;
     border-radius: 10px;
     margin: 20px 0;
+}
+
+.stage-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.stage-button {
+    margin: 12px 0;
+}
+
+#plug {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-family: "Filson Soft Book";
+    font-size: 12px;
+    color: #EADAC7;
 }
 
 /* "MOBILE" DESKTOP STYLING */
