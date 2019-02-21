@@ -302,6 +302,7 @@ section {
     font-size: 24px;
     color: #EADAC7;
     margin: 8px 0;
+    text-align: right;
 }
 
 .ww-logo {
@@ -453,6 +454,40 @@ section {
     #lineup2017-min {
         font-size: 30px;
         line-height: 38px;
+    }
+
+    #fox {
+        padding: 0;
+    }
+
+    .sponsors-wrapper {
+        margin-right: -40px;
+    }
+
+    .sponsors-title {
+        font-size: 108px;
+        margin: 24px 0;
+        margin-right: -20px;
+    }
+
+    .sponsor {
+        font-size: 28px;
+    }
+
+    #wrapper4 {
+        flex-direction: column-reverse;
+    }
+
+    .stage-wrapper {
+        flex-direction: row;
+        align-items: center;
+        margin-top: -32px;
+    }
+
+    #stage {
+        width: 96vw;
+        padding: 0;
+        margin-left: -32px;
     }
 
     #nav-wrapper {
