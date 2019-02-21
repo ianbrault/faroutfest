@@ -224,10 +224,6 @@ section {
     height: 108px;
     clip-path: polygon(0 0, 40% 44%, 100% 73%, 0% 100%);
     shape-outside: polygon(0 0, 40% 44%, 100% 73%, 0% 100%);
-    /*
-    clip-path: polygon(0 0, 32% 64%, 100% 100%, 0% 100%);
-    shape-outside: polygon(0 0, 32% 64%, 100% 100%, 0% 100%);
-    */
 }
 
 #royce {
@@ -286,11 +282,31 @@ section {
     color: #C45188;
 }
 
-#sponsors {
+.sponsors-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.sponsors-title {
     font-family: "Good Dog";
-    font-size: 80px;
+    font-size: 92px;
     color: #FAA235;
-    margin: 0;
+    margin: 20px 0;
+}
+
+.sponsor {
+    font-size: 24px;
+    color: #EADAC7;
+    margin: 8px 0;
+}
+
+.ww-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin: 20px 0;
 }
 
 /* "MOBILE" DESKTOP STYLING */
