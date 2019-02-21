@@ -27,19 +27,13 @@
             $van.css("bottom", 30 + $("#nav-wrapper").innerHeight());
 
         let screenUnit = mobile ? $body.innerHeight() : $body.innerWidth();
-        let totalProgress = (0.5 + 1.2 + 3) * screenUnit;
+        let totalProgress = (0.4 + 1.2 + 3) * screenUnit;
 
         let vanWidth = $van.innerWidth();
         let vanLeftMin = -0.5 * $body.innerWidth();
         let vanLeftMax = ($body.innerWidth() / 2) - (vanWidth / 2);
         let vanPathLength = Math.abs(vanLeftMin) + vanLeftMax;
         let vanScrollEnd = screenUnit;
-
-        console.log($body.innerWidth());
-        console.log($body.innerWidth() / 2);
-        console.log(vanWidth);
-        console.log(vanWidth / 2);
-        console.log(vanLeftMax);
 
         let navWidth = $("#nav").innerWidth();
 

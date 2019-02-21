@@ -36,7 +36,7 @@ a {
 }
 
 #content {
-    height: 570vh;
+    height: 560vh;
     width: 100vw;
     display: flex;
     flex-flow: column;
@@ -119,7 +119,7 @@ section {
 }
 
 .spacer {
-    height: 50vh;
+    height: 40vh;
     width: 100vw;
 }
 
@@ -340,7 +340,7 @@ section {
 
     #content {
         height: 100vh;
-        width: 570vw;
+        width: 560vw;
         flex-direction: row;
     }
 
@@ -351,7 +351,7 @@ section {
 
     .spacer {
         height: 100vh;
-        width: 50vw;
+        width: 40vw;
     }
 
     .image {
@@ -367,12 +367,13 @@ section {
         padding: 0;
         overflow-x: hidden;
         overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
     }
 
     .home {
         justify-content: center;
         padding-top: 0;
-        padding-bottom: 20vh;
+        padding-bottom: 12vh;
     }
 
     #logo {
