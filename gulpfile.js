@@ -2,18 +2,22 @@
  * gulpfile.js
  */
 
-const { series, parallel } = require("gulp");
+const { dest, parallel, src } = require("gulp");
+const babel = require("gulp-babel");
+const cleanCss = require("gulp-clean-css");
+const uglify = require("gulp-uglify");
 
-function clean(cb) {
-    cb();
+function css() {
+    return src("src/css/*")
+        .pipe(cleanCss())
+        .pipe(dest("dist/css"));
 }
 
-function css(cb) {
-    cb();
+function js() {
+    return src("src/js/*")
+        .pipe(babel({presets: ["@babel/preset-env"]}))
+        .pipe(uglify())
+        .pipe(dest("dist/js"));
 }
 
-function js(cb) {
-    cb();
-}
-
-exports.build = series(clean, parallel(css, js));
+exports.build = parallel(css, js);
