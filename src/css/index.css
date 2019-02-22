@@ -229,15 +229,6 @@ section {
     shape-margin: 32px;
 }
 
-#text-arc-top {
-    display: inline-block;
-    float: left;
-    width: 72px;
-    height: 80px;
-    clip-path: polygon(0 0, 100% 0, 30% 30%, 0% 100%);
-    shape-outside: polygon(0 0, 100% 0, 30% 30%, 0% 100%);
-}
-
 #royce {
     padding-left: 32px;
 }
@@ -376,7 +367,7 @@ section {
     }
 
     .copy {
-        font-size: 16px;
+        font-size: 20px;
         line-height: 26px;
     }
 
@@ -408,8 +399,8 @@ section {
     }
 
     .copy {
-        font-size: 18px;
-        line-height: 28px;
+        font-size: 22px;
+        line-height: 32px;
     }
 
     .image {
@@ -444,6 +435,14 @@ section {
         -webkit-overflow-scrolling: touch;
     }
 
+    #content {
+        height: 464vh;
+    }
+
+    #s2, #s3, #s4, #s5 {
+        height: 80vh;
+    }
+
     .home {
         justify-content: center;
         padding-top: 0;
@@ -471,11 +470,19 @@ section {
         right: 4vw;
         top: 0;
         width: 90vw;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     #wrapper1 {
         height: 100%;
-        max-width: 88vw;
+        max-width: 94vw;
+    }
+
+    .ferris-leader {
+        display: none;
     }
 
     #ferris {
@@ -494,13 +501,13 @@ section {
     }
 
     #wrapper2 {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
+        justify-content: flex-end;
     }
 
     #royce {
         width: 64%;
-        margin-top: -32px;
     }
 
     #lineup-title {
@@ -561,6 +568,7 @@ section {
 
     #wrapper4 {
         flex-direction: column-reverse;
+        justify-content: flex-end;
         margin-top: -20px;
     }
 
@@ -568,7 +576,6 @@ section {
         position: relative;
         flex-direction: row;
         align-items: center;
-        top: -32px;
         padding: 0;
     }
 
