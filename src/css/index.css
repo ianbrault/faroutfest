@@ -526,6 +526,7 @@ section {
 
     #wrapper1 {
         height: 100%;
+        width: 94vw;
         max-width: 94vw;
     }
 
@@ -534,14 +535,14 @@ section {
     }
 
     #ferris {
-        width: 52vw;
+        width: 48vw;
         shape-outside: circle(at left 50% top 49%);
         shape-margin: 26px;
     }
 
     .copy {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 32px;
+        line-height: 42px;
     }
 
     #text-arc-top {
