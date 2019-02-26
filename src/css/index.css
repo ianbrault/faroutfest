@@ -96,6 +96,35 @@ section {
     width: 50vw;
 }
 
+.fof-title {
+    font-size: 36px;
+    color: #EADAC7;
+    text-align: center;
+    margin: 12px 0;
+    -moz-text-fill-color: #EADAC7;
+    -webkit-text-fill-color: #EADAC7;
+    -moz-text-stroke: 6px hsl(3, 74%, 60%);
+    -webkit-text-stroke: 6px hsl(3, 74%, 60%);
+    paint-order: stroke fill;
+}
+
+.stage-title {
+    display: inherit;
+    font-size: 32px;
+    color: #EADAC7;
+    text-align: right;
+    margin: 12px 0;
+}
+
+.stage-title-mobile {
+    display: none;
+    font-size: 36px;
+    color: #EADAC7;
+    text-align: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
 .row {
     display: flex;
     flex-flow: row;
@@ -103,6 +132,15 @@ section {
     justify-content: center;
     width: 100vw;
     margin: 50px 0;
+}
+
+.home-row {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin: 12px 0;
 }
 
 .royce-row {
@@ -453,6 +491,16 @@ section {
         width: 82vw;
     }
 
+    .fof-title {
+        font-size: 50px;
+        margin: 20px 0;
+        -moz-text-fill-color: #EADAC7;
+        -webkit-text-fill-color: #EADAC7;
+        -moz-text-stroke: 5px hsl(3, 74%, 60%);
+        -webkit-text-stroke: 5px hsl(3, 74%, 60%);
+        paint-order: stroke fill;
+    }
+
     .button {
         width: 240px;
         padding: 12px 0;
@@ -583,6 +631,14 @@ section {
         width: 96vw;
         padding: 0;
         margin-left: -32px;
+    }
+
+    .stage-title {
+        display: none;
+    }
+
+    .stage-title-mobile {
+        display: inline;
     }
 
     #nav-wrapper {
