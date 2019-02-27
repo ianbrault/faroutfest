@@ -537,12 +537,12 @@ section {
     #ferris {
         width: 48vw;
         shape-outside: circle(at left 50% top 49%);
-        shape-margin: 26px;
+        shape-margin: 28px;
     }
 
     .copy {
-        font-size: 32px;
-        line-height: 42px;
+        font-size: 36px;
+        line-height: 46px;
     }
 
     #text-arc-top {
