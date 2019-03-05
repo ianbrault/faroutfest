@@ -22,8 +22,8 @@ app.set("port", port);
  */
 
 var options = {
-    key: fs.readFileSync("../faroutfest.com.key"),
-    cert: fs.readFileSync("../faroutfest.com.pem")
+    key: fs.readFileSync("faroutfest.com.key"),
+    cert: fs.readFileSync("faroutfest.com.pem")
 };
 
 var http_server = http.createServer(app);
