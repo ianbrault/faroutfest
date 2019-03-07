@@ -173,6 +173,7 @@ section {
 
 #van {
     position: fixed;
+    z-index: 5;
     left: -60vw;
     width: 20vw;
     transform-origin: center;
@@ -190,6 +191,7 @@ section {
 
 #nav {
     position: relative;
+    z-index: 11;
     padding: 0 16px;
     display: flex;
     flex-direction: row;
@@ -200,6 +202,8 @@ section {
 }
 
 .navitem {
+    position: relative;
+    z-index: 12;
     text-decoration: none;
     font-size: 20px;
     color: #2c2c2c;
@@ -208,7 +212,7 @@ section {
 
 #progressbg {
     position: absolute;
-    z-index: 12;
+    z-index: 13;
     bottom: 0;
     left: 0;
     height: 4px;
@@ -219,7 +223,7 @@ section {
 
 #progress {
     position: absolute;
-    z-index: 13;
+    z-index: 14;
     bottom: 0;
     right: 0;
     height: 4px;
