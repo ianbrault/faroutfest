@@ -18,8 +18,12 @@ html
                     img(src="/img/slideshow/1.jpg")
                 div.home
                     img#logo(src="/img/logo.png")
-                    div.home-row
-                        p.fof-title May 4th, 2pm - 12am
+                    div.home-row.date-row
+                        svg.date(width="100%")
+                            text#date(x="50%" dy="1em") May 4th, 2pm - 12am
+                    div.home-row.location-row
+                        svg.location(width="100%")
+                            text#location(x="50%" dy="1em") Broxton Avenue, Los Angeles
                     div.home-row
                         a(target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdLw0UpomFcE7zly0XPIp-2AwZigwgMTk2tl2l995D7eQc9YQ/viewform")
                             div.button apply

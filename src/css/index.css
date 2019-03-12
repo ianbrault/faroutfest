@@ -99,18 +99,6 @@ section {
     width: 50vw;
 }
 
-.fof-title {
-    font-size: 36px;
-    color: #EADAC7;
-    text-align: center;
-    margin: 12px 0;
-    -moz-text-fill-color: #EADAC7;
-    -webkit-text-fill-color: #EADAC7;
-    -moz-text-stroke: 6px hsl(3, 74%, 60%);
-    -webkit-text-stroke: 6px hsl(3, 74%, 60%);
-    paint-order: stroke fill;
-}
-
 .stage-title {
     display: inherit;
     font-size: 32px;
@@ -144,6 +132,29 @@ section {
     justify-content: center;
     width: 100vw;
     margin: 12px 0;
+} .date-row {
+    margin-bottom: 2px;
+} .location-row {
+    margin-top: 2px;
+}
+
+svg {
+    font-family: "Filson Soft Medium";
+} svg.date {
+    height: 54px;
+    font-size: 40px;
+} svg.location {
+    height: 50px;
+    font-size: 36px;
+}
+
+#date, #location {
+    text-anchor: middle;
+    paint-order: stroke;
+    fill: #EADAC7;
+    stroke: #3d3d3d;
+    stroke-width: 4px;
+    stroke-linejoin: round;
 }
 
 .royce-row {
@@ -496,17 +507,19 @@ section {
     }
 
     #logo {
-        width: 82vw;
+        width: 88vw;
     }
 
-    .fof-title {
-        font-size: 50px;
-        margin: 20px 0;
-        -moz-text-fill-color: #EADAC7;
-        -webkit-text-fill-color: #EADAC7;
-        -moz-text-stroke: 5px hsl(3, 74%, 60%);
-        -webkit-text-stroke: 5px hsl(3, 74%, 60%);
-        paint-order: stroke fill;
+    svg.date {
+        height: 76px;
+        font-size: 60px;
+    } svg.location {
+        height: 72px;
+        font-size: 56px;
+    }
+
+    #date, #location {
+        stroke-width: 6px;
     }
 
     .button {
