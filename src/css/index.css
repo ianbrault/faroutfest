@@ -109,7 +109,8 @@ section {
 
 .stage-title-mobile {
     display: none;
-    font-size: 36px;
+    font-size: 40px;
+    line-height: 50px;
     color: #EADAC7;
     text-align: center;
     width: 100%;
@@ -178,6 +179,10 @@ svg {
     border-radius: 12px;
     background-color: hsl(3, 74%, 60%);
     box-shadow: -3px 3px 8px rgba(0,0,0,0.32);
+} .stage-button {
+    width: 180px;
+    font-size: 26px;
+    margin: 8px 0 8px 20px;
 }
 
 .spacer {
@@ -381,13 +386,25 @@ svg {
 .stage-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    padding-top: 60px;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 40px;
+    margin-right: -10%;
+    max-width: 60%;
 }
 
-.stage-button {
-    margin: 12px 0;
+.stage-row {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    margin: 4px 0;
+}
+
+#stage-logo {
+    display: inherit;
+    width: 60%;
+    margin-bottom: 12px;
 }
 
 #plug {
@@ -640,6 +657,7 @@ svg {
     #wrapper4 {
         flex-direction: column-reverse;
         justify-content: flex-end;
+        align-items: center;
         margin-top: -20px;
     }
 
@@ -647,7 +665,11 @@ svg {
         position: relative;
         flex-direction: row;
         align-items: center;
+        justify-content: center;
+        margin-right: 0;
         padding: 0;
+        align-self: center;
+        max-width: 100%;
     }
 
     #stage {
@@ -656,12 +678,26 @@ svg {
         margin-left: -32px;
     }
 
+    #stage-logo {
+        display: none;
+    }
+
     .stage-title {
         display: none;
     }
 
     .stage-title-mobile {
         display: inline;
+    }
+
+    .stage-row {
+        width: 100%;
+    }
+
+    .stage-button {
+        width: 220px;
+        font-size: 36px;
+        margin: 8px 0 8px 32px;
     }
 
     #nav-wrapper {
