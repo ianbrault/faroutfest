@@ -3,38 +3,32 @@
  */
 
 const nImages = 8;
+let nLoaded = 1;
+let images = new Array(nImages);
 
-const loadImage = async (n) => new Promise((resolve, reject) => {
+let slideshow = document.getElementById("slideshow");
+
+const loadImage = (n) => {
     let img = new Image();
-    img.onload = () => resolve(img);
-    img.onerror = reject;
-    img.src = `/img/slideshow/${n}.jpg`;
-});
+    img.onload = () => {
+        images[n] = img;
+        nLoaded++;
 
-const loadImages = async () => {
-    let promises = [];
-    for (let i = 2; i <= nImages; i++) {
-        promises.push(loadImage(i));
-    }
-
-    try {
-        let slideshow = document.getElementById("slideshow");
-        let images = await Promise.all(promises);
-        for (let i = 0; i < images.length; i++) {
-            slideshow.appendChild(images[i]);
+        if (nLoaded === nImages) {
+            images.forEach((image) => slideshow.appendChild(image));
+            $(function() {
+                $("#slideshow img:gt(0)").hide();
+                setInterval(function() {
+                    $("#slideshow :first-child").fadeOut(600)
+                        .next("img").fadeIn(600)
+                        .end().appendTo("#slideshow");
+                }, 4000);
+            });
         }
-    } catch(err) {
-        console.error(err);
-    }
+    };
+    img.onerror = (err) => console.error(`error loading slideshow image ${n}: ${err}`);
+    img.src = `/img/slideshow/${n}.jpg`;
 };
 
-loadImages().then(() => {
-    $(function() {
-        $("#slideshow img:gt(0)").hide();
-        setInterval(function() {
-            $("#slideshow :first-child").fadeOut(600)
-                .next("img").fadeIn(600)
-                .end().appendTo("#slideshow");
-        }, 4000);
-    });
-});
+for (let i = 2; i <= nImages; i++)
+    loadImage(i);
