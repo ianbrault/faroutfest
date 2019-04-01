@@ -44,7 +44,7 @@ svg {
 .content-wrapper {
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 80vw;
     align-items: center;
 }
 
@@ -59,6 +59,30 @@ svg {
     color: #3d3d3d;
     margin: 4px 0;
     font-size: 20px;
+    text-align: center;
 } .a {
     font-family: "Filson Soft Book";
+}
+
+/* MOBILE STYLING */
+@media only screen and (max-device-width: 813px) {
+    #logo {
+        width: 72vw;
+        margin-top: 40px;
+    }
+
+    svg {
+        height: 60px;
+        margin: 12px 0 32px 0;
+    }
+
+    #title {
+        height: 60px;
+        font-size: 48px;
+        stroke-width: 4px;
+    }
+
+    .q, .a {
+        font-size: 34px;
+    }
 }
