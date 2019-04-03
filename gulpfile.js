@@ -9,7 +9,12 @@ const uglify = require("gulp-uglify");
 
 function css() {
     return src("src/css/*")
-        .pipe(cleanCss())
+        .pipe(cleanCss({
+            level: {
+                1: { all: true },
+                2: { mergeMedia: true }
+            }
+        }))
         .pipe(dest("dist/css"));
 }
 
