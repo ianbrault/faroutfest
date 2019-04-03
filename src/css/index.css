@@ -304,8 +304,11 @@ svg {
 
 /*** ROYCE ***/
 
-.lineup-wrapper {
-    width: 100%;
+#lineup-wrapper {
+    position: absolute;
+    left: 1906px;
+    top: 8px;
+    width: 780px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -313,28 +316,29 @@ svg {
 
 #lineup-title, #lineup-switch {
     cursor: pointer;
-    user-select: none;
-    color: #FAA235;
     width: 100%;
     text-align: center;
 }
 
 #lineup-title {
+    color: #6D62D1;
     font-family: "Good Dog";
     font-size: 80px;
     text-transform: uppercase;
-    margin: 8px 0 0 0;
+    margin: 0;
 }
 
 #lineup-switch {
+    color: white;
     font-family: "Filson Soft Book";
     font-size: 18px;
-    margin: 0 0 16px 0;
+    margin: -8px 0 20px 0;
 }
 
 #lineup2018, #lineup2017-maj, #lineup2017-min {
-    color: #F3CB39;
-    font-family: "Filson Soft Book";
+    color: #3d3d3d;
+    text-shadow: #EADAC7 0 0 12px;
+    font-family: "Filson Soft Medium";
     text-align: center;
     margin: 0;
 }
@@ -356,7 +360,7 @@ svg {
 }
 
 .dot {
-    color: #C45188;
+    color: #6D62D1;
 }
 
 @media only screen and (min-width: 1000px) {

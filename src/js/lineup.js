@@ -43,13 +43,6 @@ let lineup_p_2017_min = document.createElement("p");
 lineup_p_2017_min.id = "lineup2017-min";
 lineup_p_2017_min.innerHTML = join_artist_strings(lineup_2017_min);
 
-let apply_button_wrapper = document.createElement("div");
-apply_button_wrapper.className = "royce-row";
-
-let apply_button = document.createElement("div");
-apply_button.className = "button";
-apply_button.innerHTML = "apply";
-
 const unset_lineup = () => {
     while (lineup_body.firstChild)
         lineup_body.removeChild(lineup_body.firstChild);
@@ -69,8 +62,6 @@ const set_lineup = (lineup_index) => {
 
     if (year === 2019) {
         lineup_body.appendChild(lineup_p_2019);
-        apply_button_wrapper.appendChild(apply_button);
-        lineup_body.appendChild(apply_button_wrapper);
     } else if (year === 2018) {
         lineup_body.appendChild(lineup_p_2018);
     } else {
