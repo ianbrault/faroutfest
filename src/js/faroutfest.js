@@ -30,8 +30,8 @@
             $van.css("bottom", 30 + $("#nav-wrapper").innerHeight());
 
         let screenUnit = mobile ? $body.innerHeight() : $body.innerWidth();
-        let sectionSize = mobile ? 0.8 : 1;
-        let totalProgress = mobile ? (0.4 + (4 * sectionSize)) * screenUnit : (0.4 + 1.2 + (3 * sectionSize)) * screenUnit;
+
+        let totalProgress = $("#background").innerWidth();
 
         let vanWidth = $van.innerWidth();
         let vanLeftMin = -0.6 * $body.innerWidth();
