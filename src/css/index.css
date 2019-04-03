@@ -31,6 +31,10 @@ a {
     text-decoration: none;
 }
 
+#content-wrapper {
+    position: relative;
+}
+
 #background {
     height: 100vh;
 }
@@ -272,31 +276,27 @@ svg {
 
 /*** FERRIS WHEEL ***/
 
-.copy {
-    height: 100%;
+#copy {
+    position: absolute;
+    left: 400px;
+    top: 60px;
+    width: 640px;
     margin: 0;
-    color: white;
+    color: #3d3d3d;
     font-family: "Filson Soft Book";
     font-size: 14px;
     line-height: 24px;
 }
 
 @media only screen and (min-width: 1000px) {
-    .copy {
+    #copy {
         font-size: 20px;
-        line-height: 26px;
-    }
-}
-
-@media only screen and (min-width: 1250px) {
-    .copy {
-        font-size: 22px;
         line-height: 32px;
     }
 }
 
 @media only screen and (max-device-width: 813px) {
-    .copy {
+    #copy {
         font-size: 36px;
         line-height: 46px;
     }
