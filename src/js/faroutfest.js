@@ -27,7 +27,7 @@
         if (mobile)
             $van.css("bottom", 50 + $("#nav-wrapper").innerHeight());
         else
-            $van.css("bottom", 30 + $("#nav-wrapper").innerHeight());
+            $van.css("bottom", 12 + $("#nav-wrapper").innerHeight());
 
         let screenUnit = mobile ? $body.innerHeight() : $body.innerWidth();
 

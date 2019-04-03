@@ -66,7 +66,7 @@ section {
 #nav-wrapper {
     position: fixed;
     z-index: 10;
-    bottom: 20px;
+    bottom: 12px;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -91,7 +91,7 @@ section {
     text-decoration: none;
     font-size: 20px;
     color: #2c2c2c;
-    padding: 24px 32px;
+    padding: 20px 32px;
 }
 
 #progressbg {
@@ -121,6 +121,8 @@ section {
     left: -60vw;
     width: 20vw;
     transform-origin: center;
+    filter: drop-shadow(-3px 3px 4px #3d3d3d50);
+    -webkit-filter: drop-shadow(-3px 3px 4px #3d3d3d50);
 }
 
 @media only screen and (max-device-width: 813px) {
