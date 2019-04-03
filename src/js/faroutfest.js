@@ -31,15 +31,13 @@
 
         let screenUnit = mobile ? $body.innerHeight() : $body.innerWidth();
 
+        let navWidth = $("#nav").innerWidth();
         let totalProgress = $("#background").innerWidth();
 
-        let vanWidth = $van.innerWidth();
         let vanLeftMin = -0.6 * $body.innerWidth();
-        let vanLeftMax = ($body.innerWidth() / 2) - (vanWidth / 2);
+        let vanLeftMax = ($body.innerWidth() / 2) - ($van.innerWidth() / 2);
         let vanPathLength = Math.abs(vanLeftMin) + vanLeftMax;
         let vanScrollEnd = screenUnit;
-
-        let navWidth = $("#nav").innerWidth();
 
         let normalizeWheel = function(event) {
             let pixelStep = 10;
