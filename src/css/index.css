@@ -27,14 +27,6 @@ a {
     text-decoration: none;
 }
 
-#background {
-    position: fixed;
-    z-index: 0;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(#6d62d1, #2c2c2c);
-}
-
 #content {
     height: 560vh;
     width: 100vw;
@@ -50,6 +42,10 @@ section {
     height: 100vh;
     width: 100vw;
     flex-shrink: 0;
+}
+
+#background {
+    height: 100vh;
 }
 
 #s1 {
@@ -183,11 +179,6 @@ svg {
     width: 180px;
     font-size: 26px;
     margin: 8px 0 8px 20px;
-}
-
-.spacer {
-    height: 40vh;
-    width: 100vw;
 }
 
 #van {
@@ -423,7 +414,7 @@ svg {
 
     #content {
         height: 100vh;
-        width: 560vw;
+        /* width: 560vw; */
         flex-direction: row;
     }
 
@@ -434,11 +425,6 @@ svg {
     #s3 {
         width: 120vw;
         height: 100vh;
-    }
-
-    .spacer {
-        height: 100vh;
-        width: 40vw;
     }
 
     .copy {
