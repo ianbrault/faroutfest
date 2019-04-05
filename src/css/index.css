@@ -428,32 +428,35 @@ svg {
 
 /*** FOX ***/
 
-.sponsors-wrapper {
+#sponsors-wrapper {
+    position: absolute;
+    top: 20px;
+    left: 2720px;
+    width: 360px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    height: 100%;
 }
 
 .sponsors-title {
     font-family: "Good Dog";
     font-size: 92px;
-    color: #FAA235;
+    color: #F3CB39;
     margin: 20px 0;
 }
 
 .sponsor {
     font-size: 24px;
-    color: #EADAC7;
+    color: #faf3eb;
     margin: 8px 0;
     text-align: right;
 }
 
 .ww-logo {
-    width: 80px;
-    height: 80px;
+    width: 72px;
+    height: 72px;
     border-radius: 10px;
-    margin: 20px 0;
+    margin: 12px 20px 0 0;
 }
 
 @media only screen and (max-device-width: 813px) {
