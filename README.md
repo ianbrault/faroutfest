@@ -1,19 +1,3 @@
 # Far Out Fest 2019
 
 Development repository for the website for Far Out Fest 2019
-
-## To-do
-
-- [x] setup basic page layout
-- [x] figure out horizontal scrolling
-- [x] vertical scrolling for mobile
-- [x] van drives in from the left
-- [x] navbar pops up when content is scrolled into
-- [x] scroll progress bar
-- [x] link scrolling from clicking navbar
-- [x] find font assets
-- [x] slideshow feature
-- [x] figure out iOS scrolling
-- [ ] transforms on screen resize (recalculate constants)
-- [ ] better sizing/positioning of images
-- [ ] slide-in animations for images on mobile scroll (?)
