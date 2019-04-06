@@ -89,12 +89,6 @@
             };
         };
 
-        let scrollMobile = function(delta) {
-            let docTop = $document.scrollTop();
-            $document.scrollTop(docTop + delta);
-            return docTop;
-        };
-
         let scrollDesktop = function(delta) {
             let docLeft = $document.scrollLeft();
             $document.scrollLeft(docLeft + delta);
@@ -131,11 +125,7 @@
             let x = (n.pixelX !== 0 ? n.pixelX : n.pixelY);
             let delta = Math.min(Math.abs(x), 150) * scrollFactor * (x > 0 ? 1 : -1);
 
-            let scroll;
-            if ($body.innerWidth() <= 1000)
-                scroll = scrollMobile(delta);
-            else
-                scroll = scrollDesktop(delta);
+            let scroll = scrollDesktop(delta);
 
             updateProgress(scroll);
             scrollVan(scroll);
@@ -153,17 +143,6 @@
             requestAnimationFrame(mobileFrame);
         }
 
-        let scrollHandlerAttached = $body.innerWidth() > 1000;
-        $(window).on("resize", function() {
-            if ($body.innerWidth() <= 1000 && scrollHandlerAttached) {
-                $body.off("wheel", scrollHandler);
-                scrollHandlerAttached = false;
-            } else if ($body.innerWidth() > 1000 && !scrollHandlerAttached) {
-                $body.on("wheel", scrollHandler);
-                scrollHandlerAttached = true;
-            }
-        });
-
         function linkScroll(event) {
             if (mobile) {
                 return;
@@ -180,16 +159,10 @@
             event.stopPropagation();
 
             // calculate target position
-            let x, y;
-            if ($body.innerWidth() <= 1000) {
-                x = $target.offset().top - (Math.max(0, $window.height() - $target.outerHeight()) / 2);
-                y = { scrollTop: x };
-            } else {
-                x = $target.offset().left - (Math.max(0, $window.width() - $target.outerWidth()) / 2);
-                if (href === "#s3")
-                    x += (0.2 * screenUnit);
-                y = { scrollLeft: x };
-            }
+            let x = $target.offset().left - (Math.max(0, $window.width() - $target.outerWidth()) / 2);
+            if (href === "#s3")
+                x += (0.2 * screenUnit);
+            let y = { scrollLeft: x };
 
             $bodyHtml.stop().animate(y, linkScrollSpeed, "swing");
             let scroll = y.scrollTop ? y.scrollTop : y.scrollLeft;
