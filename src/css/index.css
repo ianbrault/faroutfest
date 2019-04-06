@@ -123,7 +123,7 @@ section {
     position: fixed;
     z-index: 5;
     left: -60vw;
-    width: 20vw;
+    width: 260px;
     transform-origin: center;
     filter: drop-shadow(-3px 3px 4px #3d3d3d50);
     -webkit-filter: drop-shadow(-3px 3px 4px #3d3d3d50);
