@@ -9,11 +9,12 @@
     let $document = $(document);
     let $body = $("body");
     let $bodyHtml = $("body,html");
+
     let $progBar = $("#progress");
     let $van = $("#van");
 
     let logo = document.getElementById("logo");
-    let logoPosInitial = logo.getBoundingClientRect().y;
+    let logoPosInit = logo.getBoundingClientRect().x;
 
     function isMobile() {
         let check = false;
@@ -33,7 +34,7 @@
         const vanLeftMax = ($body.innerWidth() / 2) - ($van.innerWidth() / 2);
         const vanPathLength = Math.abs(vanLeftMin) + vanLeftMax;
         const vanScrollEnd = screenUnit;
-        $van.css("bottom", mobile ? 50 : 12 + $("#nav-wrapper").innerHeight());
+        $van.css("bottom", (mobile ? 40 : 12) + $("#nav-wrapper").innerHeight());
 
         let normalizeWheel = function(event) {
             let pixelStep = 10;
@@ -124,7 +125,7 @@
 
         // supports mobile scrolling via requestAnimationFrame API
         function mobileFrame() {
-            let scroll = logoPosInitial - logo.getBoundingClientRect().y;
+            let scroll = logoPosInit - logo.getBoundingClientRect().x;
             updateProgress(scroll);
             scrollVan(scroll);
 
