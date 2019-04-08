@@ -3,10 +3,9 @@
  */
 
 (function($) {
-    let scrollFactor = 0.4;
-    let linkScrollSpeed = 1000;
+    const scrollFactor = 0.4;
+    const linkScrollSpeed = 1000;
 
-    let $window = $(window);
     let $document = $(document);
     let $body = $("body");
     let $bodyHtml = $("body,html");
@@ -23,21 +22,18 @@
     }
 
     (function() {
-        let mobile = isMobile();
-        if (mobile)
-            $van.css("bottom", 50 + $("#nav-wrapper").innerHeight());
-        else
-            $van.css("bottom", 12 + $("#nav-wrapper").innerHeight());
+        const mobile = isMobile();
 
-        let screenUnit = mobile ? $body.innerHeight() : $body.innerWidth();
+        const screenUnit = mobile ? $body.innerHeight() : $body.innerWidth();
 
-        let navWidth = $("#nav").innerWidth();
-        let totalProgress = $("#background").innerWidth();
+        const navWidth = $("#nav").innerWidth();
+        const totalProgress = $("#background").innerWidth();
 
-        let vanLeftMin = -0.6 * $body.innerWidth();
-        let vanLeftMax = ($body.innerWidth() / 2) - ($van.innerWidth() / 2);
-        let vanPathLength = Math.abs(vanLeftMin) + vanLeftMax;
-        let vanScrollEnd = screenUnit;
+        const vanLeftMin = -0.6 * $body.innerWidth();
+        const vanLeftMax = ($body.innerWidth() / 2) - ($van.innerWidth() / 2);
+        const vanPathLength = Math.abs(vanLeftMin) + vanLeftMax;
+        const vanScrollEnd = screenUnit;
+        $van.css("bottom", mobile ? 50 : 12 + $("#nav-wrapper").innerHeight());
 
         let normalizeWheel = function(event) {
             let pixelStep = 10;
@@ -89,12 +85,6 @@
             };
         };
 
-        let scrollDesktop = function(delta) {
-            let docLeft = $document.scrollLeft();
-            $document.scrollLeft(docLeft + delta);
-            return docLeft;
-        };
-
         let scrollVan = function(scroll) {
             let position;
             if (scroll <= 0)
@@ -115,7 +105,7 @@
         };
 
         // supports desktop scrolling via wheel events
-        let scrollHandler = function(event) {
+        $body.on("wheel", function(event) {
             event.preventDefault();
             event.stopPropagation();
             // stop link scroll
@@ -125,14 +115,14 @@
             let x = (n.pixelX !== 0 ? n.pixelX : n.pixelY);
             let delta = Math.min(Math.abs(x), 150) * scrollFactor * (x > 0 ? 1 : -1);
 
-            let scroll = scrollDesktop(delta);
+            let docLeft = $document.scrollLeft();
+            $document.scrollLeft(docLeft + delta);
 
-            updateProgress(scroll);
-            scrollVan(scroll);
-        };
+            updateProgress(docLeft);
+            scrollVan(docLeft);
+        });
 
-        $body.on("wheel", scrollHandler);
-
+        // supports mobile scrolling via requestAnimationFrame API
         function mobileFrame() {
             let scroll = logoPosInitial - logo.getBoundingClientRect().y;
             updateProgress(scroll);
@@ -144,10 +134,6 @@
         }
 
         function linkScroll(event) {
-            if (mobile) {
-                return;
-            }
-
             let $this = $(this);
             let href = $this.attr("href");
 
@@ -159,19 +145,19 @@
             event.stopPropagation();
 
             // calculate target position
-            let x = $target.offset().left - (Math.max(0, $window.width() - $target.outerWidth()) / 2);
-            if (href === "#s3")
-                x += (0.2 * screenUnit);
+            let x = $target.offset().left - (Math.max(0, $(window).width() - $target.outerWidth()) / 2);
             let y = { scrollLeft: x };
 
             $bodyHtml.stop().animate(y, linkScrollSpeed, "swing");
-            let scroll = y.scrollTop ? y.scrollTop : y.scrollLeft;
-            updateProgress(scroll);
-            scrollVan(scroll);
+            updateProgress(y.scrollLeft);
+            scrollVan(y.scrollLeft);
         }
 
-        let navItems = document.getElementsByClassName("navitem");
-        for (let i = 0; i < navItems.length; i++)
-            navItems[i].onclick = linkScroll;
+        // link scroll animation is janky on mobile
+        if (!mobile) {
+            let navItems = document.getElementsByClassName("navitem");
+            for (let i = 0; i < navItems.length; i++)
+                navItems[i].onclick = linkScroll;
+        }
     })();
 })(jQuery);
