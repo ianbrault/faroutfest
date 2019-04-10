@@ -6,6 +6,12 @@ let lineup_title = document.getElementById("lineup-title");
 let lineup_switch = document.getElementById("lineup-switch");
 let lineup_body = document.getElementById("lineup-text-wrapper");
 
+const lineup_2019 = [
+    "PARTY SHIRT", "HVNNIBVL", "DJ Bbddy", "Apollo Bebop", "Thom.ko", "Dark Dazey", "Adobe House",
+    "The Millenial Club", "Amir Kelly", "Chel", "Ryan Cassata", "Eva B. Ross", "Pragathi Guru",
+    "BEL", "Jherz", "Lauren Reiner"
+];
+
 const lineup_2018 = [
     "ANIMVLZ", "Blue Apples", "Dio Lewis", "My Friend Ryan", "Munir Griffin", "The Dreads",
     "Triangle Fire", "Ascanio", "Cerulean", "Drew Karperos", "Nightswimmers", "Officer Gavin",
@@ -29,7 +35,7 @@ const join_artist_strings = (lineup) => lineup.join(" <span class=\"dot\">•</s
 
 let lineup_p_2019 = document.createElement("p");
 lineup_p_2019.id = "lineup2018";
-lineup_p_2019.innerHTML = "coming soon!";
+lineup_p_2019.innerHTML = join_artist_strings(lineup_2019);
 
 let lineup_p_2018 = document.createElement("p");
 lineup_p_2018.id = "lineup2018";
