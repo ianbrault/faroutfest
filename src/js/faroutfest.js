@@ -162,20 +162,3 @@
         }
     })();
 })(jQuery);
-
-let overlay = document.getElementById("popup-overlay");
-
-function showPopup() {
-    overlay.style.display = "flex";
-}
-
-function dismissPopup() {
-    overlay.style.display = "none";
-}
-
-let buttons = document.getElementsByClassName("popup-button");
-for (let i = 0; i < buttons.length; i++)
-    buttons[i].onclick = dismissPopup;
-
-// show popup after 5 seconds
-setTimeout(showPopup, 5000);
