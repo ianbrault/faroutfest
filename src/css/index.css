@@ -260,7 +260,7 @@ svg {
         height: 72px;
         font-size: 56px;
     } #date, #location {
-        stroke-width: 6px;
+        stroke-width: 4px;
     }
 
     .button {
@@ -296,8 +296,10 @@ svg {
 
 @media only screen and (max-device-width: 813px) {
     #copy {
+        left: 1040px;
+        width: 780px;
         font-size: 36px;
-        line-height: 46px;
+        line-height: 48px;
     }
 }
 
@@ -398,30 +400,39 @@ svg {
 }
 
 @media only screen and (max-device-width: 813px) {
+    #lineup-wrapper {
+        left: 3680px;
+        width: 900px;
+    }
+
     #lineup-title {
-        font-size: 132px;
+        font-size: 140px;
         margin: 0;
     }
 
     #lineup-switch {
-        font-size: 28px;
-        margin: 0 0 20px 0;
+        font-size: 32px;
+        margin: 0 0 50px 0;
+    }
+
+    #lineup2018, #lineup2017-maj, #lineup2017-min {
+        text-shadow: #3d3d3d 0 0 16px;
     }
 
     #lineup2018 {
-        font-size: 38px;
-        line-height: 48px;
+        font-size: 50px;
+        line-height: 60px;
     }
 
     #lineup2017-maj {
-        font-size: 33px;
-        line-height: 40px;
+        font-size: 38px;
+        line-height: 46px;
         margin-bottom: 16px;
     }
 
     #lineup2017-min {
-        font-size: 30px;
-        line-height: 38px;
+        font-size: 32px;
+        line-height: 40px;
     }
 }
 
@@ -459,26 +470,25 @@ svg {
 }
 
 @media only screen and (max-device-width: 813px) {
-    .sponsors-wrapper {
-        margin-left: -40px;
-        align-items: flex-start;
+    #sponsors-wrapper {
+        left: 5080px;
+        width: 420px;
     }
 
     .sponsors-title {
-        font-size: 120px;
+        font-size: 132px;
         margin: 24px 0;
-        margin-right: -20px;
     }
 
     .sponsor {
-        font-size: 30px;
-        line-height: 36px;
-        text-align: left;
+        font-size: 36px;
+        line-height: 48px;
     }
 
     .ww-logo {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
+        margin-top: 20px;
     }
 }
 
@@ -516,28 +526,20 @@ svg {
 }
 
 @media only screen and (max-device-width: 813px) {
-    .stage-wrapper {
-        position: relative;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin-right: 0;
-        padding: 0;
-        align-self: center;
-        max-width: 100%;
+    #stage-wrapper {
+        top: 64px;
+        right: 472px;
+        width: 720px;
     }
 
     #stage-logo {
-        display: none;
-    }
-
-    .stage-row {
-        width: 100%;
+        width: 88%;
+        margin-bottom: 28px;
     }
 
     .stage-button {
-        width: 220px;
-        font-size: 36px;
+        width: 240px;
+        font-size: 38px;
         margin: 8px 0 8px 32px;
     }
 }
