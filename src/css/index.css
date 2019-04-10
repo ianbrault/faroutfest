@@ -619,3 +619,38 @@ svg {
     cursor: pointer;
     background-color: #EADAC780;
 }
+
+@media only screen and (max-device-width: 813px) {
+    #popup {
+        width: 75vw;
+        border-radius: 16px;
+    }
+
+    #popup-link {
+        width: 68%;
+        margin-top: 80px;
+    }
+
+    #popup-title {
+        font-size: 38px;
+        margin: 16px 0;
+    }
+
+    #popup-text {
+        width: 82%;
+        font-size: 32px;
+        line-height: 42px;
+        margin: 20px 0 32px 0;
+    }
+
+    #popup-row {
+        margin-bottom: 80px;
+    }
+
+    .popup-button {
+        width: 220px;
+        padding: 16px 0;
+        margin: 0 20px;
+        font-size: 32px;
+    }
+}
