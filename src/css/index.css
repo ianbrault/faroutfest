@@ -401,7 +401,7 @@ svg {
 
 @media only screen and (max-device-width: 813px) {
     #lineup-wrapper {
-        left: 3680px;
+        left: 3620px;
         width: 900px;
     }
 
@@ -462,11 +462,22 @@ svg {
     text-align: right;
 }
 
+.sponsors-row {
+    display: flex;
+    flex-direction: row;
+    margin: 12px 0;
+}
+
 .ww-logo {
     width: 72px;
     height: 72px;
     border-radius: 10px;
-    margin: 12px 20px 0 0;
+    margin: 0 8px;
+}
+
+.getaround {
+    height: 64px;
+    margin-right: 8px;
 }
 
 @media only screen and (max-device-width: 813px) {
@@ -485,10 +496,19 @@ svg {
         line-height: 48px;
     }
 
+    .sponsors-row {
+        margin: 20px 0;
+    }
+
     .ww-logo {
         width: 120px;
         height: 120px;
         margin-top: 20px;
+    }
+
+    .getaround {
+        height: 80px;
+        margin-right: 12px;
     }
 }
 
