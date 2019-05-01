@@ -26,7 +26,7 @@ const lineup_2019_links = [
     "https://open.spotify.com/artist/0tFlCZaGI6bC1XxtfzIhmG?si=pekXVjsHRMyZvDDtd3pvAw",
     "https://open.spotify.com/artist/7GiQADKi0abGiu4N77vCDw?si=45IQjfrwSyORltGGCu5t_Q",
     "https://open.spotify.com/artist/1IMZlbjHW9DCrW6xbtjI6F?si=KS8CH9DJQDegHNKQyXLt3Q",
-    "#",
+    "https://soundcloud.com/belwhelanmusic",
     "https://open.spotify.com/artist/35Xnj9H1l4mPcG9Ft3bKPU?si=cUmQDMO1Q_utEChqwuu71g",
     "https://open.spotify.com/artist/5xDlkjMvKOEsu304irPFxx?si=gugndAs0S5W2WdJXlqYdbQ",
 ];
